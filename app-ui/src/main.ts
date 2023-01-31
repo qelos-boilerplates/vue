@@ -1,15 +1,11 @@
-import {authorize, code} from '@qelos/web-sdk'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
 
-(async function () {
-  const {user, tenant} = await authorize()
+import './assets/main.css'
 
-  console.log(user, tenant)
+const app = createApp(App)
 
-  const res = await fetch('/api/example', {
-    method: 'post',
-    headers: {code}
-  })
-  const data = await res.json();
-  document.body.innerHTML = `<textarea>${JSON.stringify(data)}</textarea>`;
-})()
+app.use(createPinia())
 
+app.mount('#app')
