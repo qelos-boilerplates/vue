@@ -1,13 +1,22 @@
 import { fileURLToPath, URL } from 'node:url'
+import fs from "fs";
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import mkcert from 'vite-plugin-mkcert'
+
+function getEntries() {
+  const list = fs.readdirSync('./entries');
+  return list.map(filename => fileURLToPath(new URL('./entries/' + filename, import.meta.url)))
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), mkcert()],
   build: {
-    outDir: '../public'
+    outDir: '../public',
+    rollupOptions: {
+      input: getEntries(),
+    },
   },
   resolve: {
     alias: {
@@ -19,7 +28,7 @@ export default defineConfig({
     https: true,
     proxy: {
       '/api': {
-        target: 'https://0.0.0.0:1090',
+        target: 'https://0.0.0.0:2040',
         secure: false,
       }
     }

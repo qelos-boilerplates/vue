@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {useAuth} from '@/stores/auth';
-useAuth();
+const auth = useAuth();
 </script>
 
 <template>
-  <main>
+  <main v-if="auth.user">
     <TheWelcome />
   </main>
 </template>
