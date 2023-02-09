@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import mkcert from 'vite-plugin-mkcert'
 
+const serverHasCert = fs.existsSync(fileURLToPath(new URL('../cert/ca.pem', import.meta.url)))
+
 function getEntries() {
   const list = fs.readdirSync('./entries');
   return list.map(filename => fileURLToPath(new URL('./entries/' + filename, import.meta.url)))
@@ -28,7 +30,7 @@ export default defineConfig({
     https: true,
     proxy: {
       '/api': {
-        target: 'https://0.0.0.0:2040',
+        target: (serverHasCert ? 'https' : 'http') + '://0.0.0.0:2040',
         secure: false,
       }
     }
