@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "vite-plugin-mkcert": "^1.10.1",
-    "@qelos/web-sdk": "^3.1.28",
+    "@qelos/web-sdk": "^3.1.30",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
