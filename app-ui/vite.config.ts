@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import fs from "fs";
+import fs from "node:fs";
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import mkcert from 'vite-plugin-mkcert'
