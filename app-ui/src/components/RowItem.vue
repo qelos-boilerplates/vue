@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-  item: {type: Object as () => ({ title: string })}
+  item: { type: Object as () => ({ title: string }), required: true }
 })
 </script>
 <template>

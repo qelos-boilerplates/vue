@@ -6,7 +6,6 @@ import mkcert from "vite-plugin-mkcert";
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import { fileURLToPath } from 'node:url';
 
 const serverHasCert = fs.existsSync(fileURLToPath(new URL('../cert/ca.pem', import.meta.url)))
 

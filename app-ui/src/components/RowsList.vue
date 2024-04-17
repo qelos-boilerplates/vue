@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import RowItem from '@/components/RowItem.vue';
 
-defineProps({
-  items: {type: Array, default: () => []}
+const props = defineProps({
+  items: { type: Array as () => Array<{ title: string }>, default: () => [], required: true }
 })
 </script>
 <template>
   <div class="rows-list">
-    <RowItem v-for="item in items" :key="item.id" :item="item"/>
+    <RowItem v-for="item in props.items" :key="item.id" :item="item"/>
   </div>
 </template>
 
