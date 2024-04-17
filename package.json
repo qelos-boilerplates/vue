@@ -8,9 +8,11 @@
     "npm": "9"
   },
   "scripts": {
-    "bootstrap": "mkdir -p cert && npm run create-certs",
+    "bootstrap": "mkdir -p cert && npm run create-certs && npm i && cd app-ui && npm i",
     "create-certs": "node ./node_modules/@qelos/plugin-play/create-cert.js",
-    "dev": "tsx watch ./server.ts",
+    "dev": "concurrently npm:dev:*",
+    "dev:server": "tsx watch ./server.ts",
+    "dev:frontend": "cd app-ui && npm run dev",
     "start": "tsx ./server.ts",
     "build:cd": "npm i --all && (cd app-ui && npm i && npm run build) && npm i --production"
   },
@@ -19,6 +21,7 @@
     "vue": "^3.4.23"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "concurrently": "^8.2.2"
   }
 }
