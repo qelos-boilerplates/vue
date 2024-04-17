@@ -2,7 +2,7 @@
 import RowItem from '@/components/RowItem.vue';
 
 const props = defineProps({
-  items: { type: Array as () => Array<{ title: string }>, default: () => [], required: true }
+  items: { type: Array as () => Array<{ title: string, id: string }>, default: () => [], required: true }
 })
 </script>
 <template>
