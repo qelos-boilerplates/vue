@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
-    "vue": "^3.4.23"
+    "vue": "^3.4.23",
+    "@qelos/plugin-play": "^3.4.1"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

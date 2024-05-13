@@ -16,7 +16,7 @@
     "vue": "^3.4.23"
   },
   "devDependencies": {
-    "@qelos/web-sdk": "^3.2.8",
+    "@qelos/web-sdk": "^3.4.1",
     "@rushstack/eslint-patch": "^1.10.2",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.12.7",
